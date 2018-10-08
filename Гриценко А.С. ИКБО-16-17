@@ -1,0 +1,44 @@
+# praktika5ikbo-16-17
+
+________________________________
+Файл JavaApplication1.java
+
+package javaapplication1;
+
+public class JavaApplication1 {
+
+
+public static boolean recursion(char[] word){
+    int first = 0;
+    int last = word.length - 1;
+    if (last > first) {
+        if (word[first] != word[last]) {
+            return false;
+        }
+        ++first;
+        --last;
+    } else {
+        ++first;
+        --last;
+        recursion(word);
+    }
+    return true;
+}
+    
+    public static void main(String[] args) {
+        char word[] = {'д','о','х','о','д'};
+        System.out.println(word);
+        if (recursion(word) == true)
+            System.out.println("Палиндром");
+        else System.out.println("Не палиндром");
+        
+        char word2[] = {'м','а','ш','и','н','а'};
+        System.out.println(word2);
+        if (recursion(word2) == true)
+            System.out.println("Палиндром");
+        else System.out.println("Не палиндром");
+    }
+    
+}
+
+
